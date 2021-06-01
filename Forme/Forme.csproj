@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6F8356A-3A45-4677-90E6-4F0604006072}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Forme</RootNamespace>
+    <AssemblyName>Forme</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GlavnaForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlavnaForma.Designer.cs">
+      <DependentUpon>GlavnaForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IzmenaCene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmenaCene.Designer.cs">
+      <DependentUpon>IzmenaCene.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IzmenaClanaUgovora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmenaClanaUgovora.Designer.cs">
+      <DependentUpon>IzmenaClanaUgovora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IzmenaDelaVozila.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmenaDelaVozila.Designer.cs">
+      <DependentUpon>IzmenaDelaVozila.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IzmenaOpreme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmenaOpreme.Designer.cs">
+      <DependentUpon>IzmenaOpreme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IzmenaPonude.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmenaPonude.Designer.cs">
+      <DependentUpon>IzmenaPonude.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IzmenaPredracuna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmenaPredracuna.Designer.cs">
+      <DependentUpon>IzmenaPredracuna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IzmenaProdavca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmenaProdavca.Designer.cs">
+      <DependentUpon>IzmenaProdavca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IzmenaRacunOtpremnice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmenaRacunOtpremnice.Designer.cs">
+      <DependentUpon>IzmenaRacunOtpremnice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IzmenaStavkePonude.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmenaStavkePonude.Designer.cs">
+      <DependentUpon>IzmenaStavkePonude.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IzmenaStavkePredracuna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmenaStavkePredracuna.Designer.cs">
+      <DependentUpon>IzmenaStavkePredracuna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IzmenaStavkeRacunOtpremnice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmenaStavkeRacunOtpremnice.Designer.cs">
+      <DependentUpon>IzmenaStavkeRacunOtpremnice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IzmenaUgovora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmenaUgovora.Designer.cs">
+      <DependentUpon>IzmenaUgovora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IzmenaVozila.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmenaVozila.Designer.cs">
+      <DependentUpon>IzmenaVozila.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrikazCene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrikazCene.Designer.cs">
+      <DependentUpon>PrikazCene.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrikazOpreme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrikazOpreme.Designer.cs">
+      <DependentUpon>PrikazOpreme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrikazParticija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrikazParticija.Designer.cs">
+      <DependentUpon>PrikazParticija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrikazPonude.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrikazPonude.Designer.cs">
+      <DependentUpon>PrikazPonude.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrikazPredracuna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrikazPredracuna.Designer.cs">
+      <DependentUpon>PrikazPredracuna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrikazProdavca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrikazProdavca.Designer.cs">
+      <DependentUpon>PrikazProdavca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrikazRacunOtpremnice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrikazRacunOtpremnice.Designer.cs">
+      <DependentUpon>PrikazRacunOtpremnice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrikazUgovora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrikazUgovora.Designer.cs">
+      <DependentUpon>PrikazUgovora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrikazVozila.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrikazVozila.Designer.cs">
+      <DependentUpon>PrikazVozila.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnosCene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnosCene.Designer.cs">
+      <DependentUpon>UnosCene.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnosClanaUgovora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnosClanaUgovora.Designer.cs">
+      <DependentUpon>UnosClanaUgovora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnosDelaVozila.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnosDelaVozila.Designer.cs">
+      <DependentUpon>UnosDelaVozila.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnosOpreme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnosOpreme.Designer.cs">
+      <DependentUpon>UnosOpreme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnosPonude.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnosPonude.Designer.cs">
+      <DependentUpon>UnosPonude.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnosPredracuna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnosPredracuna.Designer.cs">
+      <DependentUpon>UnosPredracuna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnosProdavca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnosProdavca.Designer.cs">
+      <DependentUpon>UnosProdavca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnosRacunOtpremnice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnosRacunOtpremnice.Designer.cs">
+      <DependentUpon>UnosRacunOtpremnice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnosStavkePonude.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnosStavkePonude.Designer.cs">
+      <DependentUpon>UnosStavkePonude.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnosStavkePredracuna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnosStavkePredracuna.Designer.cs">
+      <DependentUpon>UnosStavkePredracuna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnosStavkeRacunaOtpremnice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnosStavkeRacunaOtpremnice.Designer.cs">
+      <DependentUpon>UnosStavkeRacunaOtpremnice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnosUgovora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnosUgovora.Designer.cs">
+      <DependentUpon>UnosUgovora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnosVozila.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnosVozila.Designer.cs">
+      <DependentUpon>UnosVozila.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GlavnaForma.resx">
+      <DependentUpon>GlavnaForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmenaCene.resx">
+      <DependentUpon>IzmenaCene.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmenaClanaUgovora.resx">
+      <DependentUpon>IzmenaClanaUgovora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmenaDelaVozila.resx">
+      <DependentUpon>IzmenaDelaVozila.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmenaOpreme.resx">
+      <DependentUpon>IzmenaOpreme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmenaPonude.resx">
+      <DependentUpon>IzmenaPonude.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmenaPredracuna.resx">
+      <DependentUpon>IzmenaPredracuna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmenaProdavca.resx">
+      <DependentUpon>IzmenaProdavca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmenaRacunOtpremnice.resx">
+      <DependentUpon>IzmenaRacunOtpremnice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmenaStavkePonude.resx">
+      <DependentUpon>IzmenaStavkePonude.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmenaStavkePredracuna.resx">
+      <DependentUpon>IzmenaStavkePredracuna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmenaStavkeRacunOtpremnice.resx">
+      <DependentUpon>IzmenaStavkeRacunOtpremnice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmenaUgovora.resx">
+      <DependentUpon>IzmenaUgovora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmenaVozila.resx">
+      <DependentUpon>IzmenaVozila.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrikazCene.resx">
+      <DependentUpon>PrikazCene.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrikazOpreme.resx">
+      <DependentUpon>PrikazOpreme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrikazParticija.resx">
+      <DependentUpon>PrikazParticija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrikazPonude.resx">
+      <DependentUpon>PrikazPonude.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrikazPredracuna.resx">
+      <DependentUpon>PrikazPredracuna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrikazProdavca.resx">
+      <DependentUpon>PrikazProdavca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrikazRacunOtpremnice.resx">
+      <DependentUpon>PrikazRacunOtpremnice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrikazUgovora.resx">
+      <DependentUpon>PrikazUgovora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrikazVozila.resx">
+      <DependentUpon>PrikazVozila.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UnosCene.resx">
+      <DependentUpon>UnosCene.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnosClanaUgovora.resx">
+      <DependentUpon>UnosClanaUgovora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnosDelaVozila.resx">
+      <DependentUpon>UnosDelaVozila.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnosOpreme.resx">
+      <DependentUpon>UnosOpreme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnosPonude.resx">
+      <DependentUpon>UnosPonude.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnosPredracuna.resx">
+      <DependentUpon>UnosPredracuna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnosProdavca.resx">
+      <DependentUpon>UnosProdavca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnosRacunOtpremnice.resx">
+      <DependentUpon>UnosRacunOtpremnice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnosStavkePonude.resx">
+      <DependentUpon>UnosStavkePonude.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnosStavkePredracuna.resx">
+      <DependentUpon>UnosStavkePredracuna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnosStavkeRacunaOtpremnice.resx">
+      <DependentUpon>UnosStavkeRacunaOtpremnice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnosUgovora.resx">
+      <DependentUpon>UnosUgovora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnosVozila.resx">
+      <DependentUpon>UnosVozila.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KontrolerKI\KontrolerKI.csproj">
+      <Project>{83459261-8529-4224-9e90-335cdcbe7187}</Project>
+      <Name>KontrolerKI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
