@@ -219,8 +219,6 @@ namespace KontrolerKI
             try
             {
                 dgvVozila.DataSource = new BindingList<Vozilo>(Broker.dajSesiju().ucitajSvaVozila());
-                
-
             }
             catch (Exception ex)
             {
