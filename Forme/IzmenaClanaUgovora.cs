@@ -27,7 +27,6 @@ namespace Forme
             InitializeComponent();
             this.txtUgovorID = txtUgovorID;
             this.dgvClanoviUgovora = dgvClanoviUgovora;
-            
         }
 
         private void IzmenaClanaUgovora_Load(object sender, EventArgs e)
