@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-
-
 using Domen;
 using System.Data;
 using System.Data.SqlClient;
@@ -39,11 +36,13 @@ namespace Server
         public List<Ugovor> ucitajUgovoreZaComboBox()
         {
             List<Ugovor> lista = new List<Ugovor>();
+            
             try
             {
                 konekcija.Open();
                 komanda.CommandText = "Select * from Ugovor";
                 SqlDataReader citac = komanda.ExecuteReader();
+                
                 while (citac.Read())
                 {
                     Ugovor u = new Ugovor();
@@ -57,28 +56,31 @@ namespace Server
                     u.Prodavac = new Prodavac();
                     u.Prodavac.ProdavacID = citac.GetInt32(5);
 
-
                     lista.Add(u);
                 }
+                
                 citac.Close();
+                
                 return lista;
             }
             catch (Exception)
             {
-
                 throw;
             }
+            
             finally { if (konekcija != null) konekcija.Close(); }
         }
 
         public List<Prodavac> ucitajSveProdavce()
         {
             List<Prodavac> lista = new List<Prodavac>();
+            
             try
             {
                 konekcija.Open();
                 komanda.CommandText = "Select * from Prodavac";
                 SqlDataReader citac = komanda.ExecuteReader();
+                
                 while (citac.Read())
                 {
                     Prodavac p = new Prodavac();
@@ -87,25 +89,29 @@ namespace Server
 
                     lista.Add(p);
                 }
+                
                 citac.Close();
+                
                 return lista;
             }
             catch (Exception)
             {
-
                 throw;
             }
+            
             finally { if (konekcija != null) konekcija.Close(); }
         }
 
         public List<Kupac> ucitajSveKupce()
         {
             List<Kupac> lista = new List<Kupac>();
+            
             try
             {
                 konekcija.Open();
                 komanda.CommandText = "Select * from Kupac";
                 SqlDataReader citac = komanda.ExecuteReader();
+                
                 while (citac.Read())
                 {
                     Kupac k = new Kupac();
@@ -117,14 +123,16 @@ namespace Server
 
                     lista.Add(k);
                 }
+                
                 citac.Close();
+                
                 return lista;
             }
             catch (Exception)
             {
-
                 throw;
             }
+            
             finally { if (konekcija != null) konekcija.Close(); }
         }
 
@@ -134,6 +142,7 @@ namespace Server
             {
                 konekcija.Open();
                 komanda.CommandText = "Select max(PredracunID) from Predracun";
+                
                 try
                 {
                     int sifra = Convert.ToInt32(komanda.ExecuteScalar());
@@ -141,78 +150,76 @@ namespace Server
                 }
                 catch (Exception)
                 {
-
                     return 1;
                 }
 
             }
             catch (Exception)
             {
-
                 throw;
             }
+            
             finally
             {
                 konekcija.Close();
-
             }
-
-
         }
 
         public Kupac ucitajKupcaZaOdredjeniUgovor(Ugovor u)
         {
-            
             try
             {
                 konekcija.Open();
                 komanda.CommandText = "Select * from Kupac k inner join Ugovor u on u.KupacJMBG=k.KupacJMBG where u.UgovorID="+u.UgovorID+"";
                 SqlDataReader citac = komanda.ExecuteReader();
+                
                 if (citac.Read())
                 {
                     Kupac k = new Kupac();
                     k.KupacJMBG = citac.GetString(0);
                     k.ImePrezimeKupca = citac.GetString(1);
 
-
                     return k;
                 }
+                
                 citac.Close();
+                
                 return null;
             }
             catch (Exception)
             {
-
                 throw;
             }
+            
             finally { if (konekcija != null) konekcija.Close(); }
         }
 
         public Kupac ucitajKupcaZaOdredjenuNarudzbenicu(Narudzbenica n)
         {
-
             try
             {
                 konekcija.Open();
                 komanda.CommandText = "Select * from Kupac k inner join Narudzbenica n on n.KupacJMBG=k.KupacJMBG where n.NarudzbenicaID=" + n.NarudzbenicaID + "";
                 SqlDataReader citac = komanda.ExecuteReader();
+                
                 if (citac.Read())
                 {
                     Kupac k = new Kupac();
                     k.KupacJMBG = citac.GetString(0);
                     k.ImePrezimeKupca = citac.GetString(1);
 
-
                     return k;
                 }
+                
                 citac.Close();
+                
                 return null;
             }
             catch (Exception)
             {
-
                 throw;
             }
+            
             finally { if (konekcija != null) konekcija.Close(); }
         }
 
@@ -225,6 +232,7 @@ namespace Server
                 konekcija.Open();
                 komanda.CommandText = "Select * from Vozilo";
                 SqlDataReader citac = komanda.ExecuteReader();
+                
                 while (citac.Read())
                 {
                     Vozilo v = new Vozilo();
@@ -238,25 +246,29 @@ namespace Server
 
                     lista.Add(v);
                 }
+                
                 citac.Close();
+                
                 return lista;
             }
             catch (Exception)
             {
-
                 throw;
             }
+            
             finally { if (konekcija != null) konekcija.Close(); }
         }
 
         public List<Oprema> ucitajListuOpremeZaOdredjenoVozilo(int voziloID)
         {
             List<Oprema> lista = new List<Oprema>();
+            
             try
             {
                 konekcija.Open();
                 komanda.CommandText = "Select * from DeoVozila dv inner join Oprema o on dv.OpremaID=o.OpremaID where VoziloID=" + voziloID + "";
                 SqlDataReader citac = komanda.ExecuteReader();
+                
                 while (citac.Read())
                 {
                     Oprema o = new Oprema();
@@ -265,14 +277,16 @@ namespace Server
 
                     lista.Add(o);
                 }
+                
                 citac.Close();
+                
                 return lista;
             }
             catch (Exception)
             {
-
                 throw;
             }
+            
             finally { if (konekcija != null) konekcija.Close(); }
         }
 
@@ -281,8 +295,8 @@ namespace Server
         {
             try
             {
-               
                 komanda.CommandText = "Select max(StavkaPredracunaID) from StavkaPredracuna";
+                
                 try
                 {
                     int sifra = Convert.ToInt32(komanda.ExecuteScalar());
@@ -290,24 +304,18 @@ namespace Server
                 }
                 catch (Exception)
                 {
-
                     return 1;
                 }
 
             }
             catch (Exception)
             {
-
                 throw;
             }
-            
-
-
         }
 
         public double ucitajCenuZaOdredjenoVozilo(int voziloID)
         {
-           
             try
             {
                 konekcija.Open();
@@ -321,18 +329,19 @@ namespace Server
 
                     return cena;
                 }
+                
                 citac.Close();
+                
                 return 0;
             }
             catch (Exception)
             {
-
                 throw;
             }
+            
             finally { if (konekcija != null) konekcija.Close(); }
         }
         
-
 
         public void sacuvajPredracun(Predracun predracun)
         {
@@ -352,25 +361,29 @@ namespace Server
                     komanda.CommandText = "Insert into StavkaPredracuna values(" + predracun.PredracunID + "," + sp.StavkaPredracunaID + "," + sp.Kolicina + "," + sp.Vozilo.VoziloID + ")";
                     komanda.ExecuteNonQuery();
                 }
+                
                 transakcija.Commit();
 
             }
             catch (Exception)
             {
-
                 transakcija.Rollback();
 
             }
+            
             finally { if (konekcija != null) konekcija.Close(); }
         }
+        
         public List<Predracun> ucitajPredracune()
         {
             List<Predracun> lista = new List<Predracun>();
+            
             try
             {
                 konekcija.Open();
                 komanda.CommandText = "Select * from Predracun p inner join Prodavac pr on p.ProdavacID=pr.ProdavacID inner join Kupac k on p.KupacJMBG=k.KupacJMBG";
                 SqlDataReader citac = komanda.ExecuteReader();
+                
                 while (citac.Read())
                 {
                     Predracun p = new Predracun();
@@ -389,28 +402,31 @@ namespace Server
                     p.Kupac.ImePrezimeKupca = citac.GetString(12);
                     p.UkupanIznos = Convert.ToDouble(citac.GetValue(8));
                     
-
                     lista.Add(p);
                 }
+                
                 citac.Close();
+                
                 return lista;
             }
             catch (Exception)
             {
-
                 throw;
             }
+            
             finally { if (konekcija != null) konekcija.Close(); }
         }
 
         public List<Predracun> ucitajPredracuneZaKriterijum(string kriterijum)
         {
             List<Predracun> lista = new List<Predracun>();
+            
             try
             {
                 konekcija.Open();
                 komanda.CommandText = "Select * from Predracun p inner join Prodavac pr on p.ProdavacID=pr.ProdavacID inner join Kupac k on p.KupacJMBG=k.KupacJMBG where k.ImePrezimeKupca like '%" + kriterijum + "%' or p.NacinPlacanja like '%" + kriterijum + "%' or pr.ImePrezimeProdavca like '%" + kriterijum + "%'";
                 SqlDataReader citac = komanda.ExecuteReader();
+                
                 while (citac.Read())
                 {
                     Predracun p = new Predracun();
@@ -431,25 +447,29 @@ namespace Server
 
                     lista.Add(p);
                 }
+                
                 citac.Close();
+                
                 return lista;
             }
             catch (Exception)
             {
-
                 throw;
             }
+            
             finally { if (konekcija != null) konekcija.Close(); }
         }
 
         public List<Predracun> ucitajPredracuneZaBrojPredracuna(BrojPredracuna bp)
         {
             List<Predracun> lista = new List<Predracun>();
+            
             try
             {
                 konekcija.Open();
                 komanda.CommandText = "Select * from Predracun p inner join Prodavac pr on p.ProdavacID=pr.ProdavacID inner join Kupac k on p.KupacJMBG=k.KupacJMBG where p.BrojPredracuna.Godina="+bp.Godina+" and BrojPredracuna.RedniBroj="+bp.RedniBroj+"";
                 SqlDataReader citac = komanda.ExecuteReader();
+                
                 while (citac.Read())
                 {
                     Predracun p = new Predracun();
@@ -470,14 +490,16 @@ namespace Server
 
                     lista.Add(p);
                 }
+                
                 citac.Close();
+                
                 return lista;
             }
             catch (Exception)
             {
-
                 throw;
             }
+            
             finally { if (konekcija != null) konekcija.Close(); }
         }
 
@@ -488,6 +510,7 @@ namespace Server
             {
                 konekcija.Open();
                 komanda.CommandText = "Select max(RacunOtpremnicaID) from RacunOtpremnica";
+                
                 try
                 {
                     int sifra = Convert.ToInt32(komanda.ExecuteScalar());
@@ -495,14 +518,11 @@ namespace Server
                 }
                 catch (Exception)
                 {
-
                     return 1;
                 }
-
             }
             catch (Exception)
             {
-
                 throw;
             }
             finally
@@ -510,8 +530,6 @@ namespace Server
                 konekcija.Close();
 
             }
-
-
         }
 
         public Kupac ucitajKupcaZaOdredjeniPredracun(Predracun p)
@@ -2226,13 +2244,10 @@ namespace Server
                 komanda.CommandText = "Update Oprema set OpremaID=" + o.OpremaID + ", NazivOpreme='" + o.NazivOpreme + "', OpisOpreme='"+o.Opis+"' where OpremaID=" + o.OpremaID + "";
                 komanda.ExecuteNonQuery();
                 return "Sistem je uspešno izmenio opremu!";
-
-
             }
             catch (Exception ex)
             {
                 return "Sistem ne može da izmeni opremu!\n" + ex.Message;
-
             }
             finally { if (konekcija != null) konekcija.Close(); }
         }
@@ -2247,7 +2262,6 @@ namespace Server
                 SqlDataReader citac = komanda.ExecuteReader();
                 if (citac.Read())
                 {
-
                     return true;
                 }
                 citac.Close();
@@ -2270,14 +2284,12 @@ namespace Server
                 komanda.CommandText = "Insert into StavkaPredracuna values(" + sp.PredracunID + "," + sp.StavkaPredracunaID + "," + sp.Kolicina + "," + sp.Vozilo.VoziloID + ")";
                 komanda.ExecuteNonQuery();
                 return "Sistem je uspešno sačuvao stavku predračuna!";
-
-
             }
             catch (Exception ex)
             {
                 return "Sistem ne može da sačuva stavku predračuna!\n" + ex.Message;
-
             }
+            
             finally { if (konekcija != null) konekcija.Close(); }
         }
 
