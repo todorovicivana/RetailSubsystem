@@ -112,7 +112,6 @@ namespace KontrolerKI
             cenaVozila = new CenaVozila();
             cenaVozila.CenaVozilaID = Convert.ToInt32(txtCenaVozilaID.Text);
            
-
             if (txtVoziloIDCena.Text != "" && (Broker.dajSesiju().postojiIDVozila(Convert.ToInt32(txtVoziloIDCena.Text))))
             {
                 try
